@@ -1,4 +1,4 @@
-from task_1 import IP_packet  # Класс №1 "IP_packet"
+from task_1 import IP_packet, Firewall, NetworkSwitch
 
 
 def test_ip_packet():
@@ -44,14 +44,14 @@ def test_ip_packet():
     except ValueError as e:
         print("Уменьшим TTL до 0:", e)
 
-    # Проверка уменьшения TTL с некорректным значением decrease_by (отрицательное число)
+    # Проверка уменьшения TTL на отрицательное число
     try:
         packet = IP_packet(1400, 64)
         packet.decrease_ttl(-1)
     except ValueError as e:
         print("Уменьшим TTL на отрицательное число:", e)
 
-    # Проверка уменьшения TTL с некорректным типом decrease_by (не целое число)
+    # Проверка уменьшения TTL на нецелое число
     try:
         packet = IP_packet(1400, 64)
         packet.decrease_ttl("abc")
@@ -62,11 +62,8 @@ def test_ip_packet():
 if __name__ == "__main__":
     test_ip_packet()
 
-# Класс №2 "Switch"
 
-from task_1 import NetworkSwitch
-
-def test_network_switch():
+def test_network_switch():  # Класс №2 "Switch"
     # Проверка корректного создания объекта NetworkSwitch
     try:
         switch = NetworkSwitch(24, 1000)
@@ -123,14 +120,12 @@ def test_network_switch():
     except Exception as e:
         print("Ошибка при расчете общей пропускной способности:", e)
 
+
 if __name__ == "__main__":
     test_network_switch()
 
-# Класс №3 "Firewall"
 
-from task_1 import Firewall
-
-def test_firewall():
+def test_firewall():  # Класс №3 "Firewall"
     # Проверка корректного создания объекта Firewall
     try:
         fw = Firewall(5)
@@ -171,6 +166,6 @@ def test_firewall():
     except ValueError as e:
         print("Добавление правил при отключенной фильтрации:", e)
 
+
 if __name__ == "__main__":
     test_firewall()
-
