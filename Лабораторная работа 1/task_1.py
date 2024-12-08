@@ -1,8 +1,7 @@
 import doctest
 
-# Класс №1 "IP_packet"
 
-class IP_packet:
+class IP_packet:  # Класс №1 "IP_packet"
     def __init__(self, packet_size: int, ttl: int):
         """
         Создание IP пакета"
@@ -72,9 +71,8 @@ class IP_packet:
 if __name__ == "__main__":
     doctest.testmod()
 
-# Класс №2 "Switch"
 
-class NetworkSwitch:
+class NetworkSwitch:  # Класс №2 "Switch"
     def __init__(self, port_count: int, port_speed: int):
         """
         Создание объекта "Сетевой коммутатор".
@@ -151,9 +149,8 @@ class NetworkSwitch:
 if __name__ == "__main__":
     doctest.testmod()
 
-# Класс №3 "Firewall"
 
-class Firewall:
+class Firewall:  # Класс №3 "Firewall"
     def __init__(self, num_rules: int, filtering_state: bool = False):
         """
         Создание объекта "Firewall".
@@ -234,4 +231,3 @@ class Firewall:
 
 if __name__ == "__main__":
     doctest.testmod()
-
