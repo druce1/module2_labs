@@ -24,6 +24,7 @@ class Book:
     def __repr__(self):
         return f"Book(id_={self.id}, name='{self.name}', pages={self.pages})"
 
+
 class Library:
     def __init__(self, books=None):
         if books is None:
